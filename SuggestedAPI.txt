@@ -1,40 +1,40 @@
 General
-Wikipedia	https://www.wikipedia.org/
-百度百科	https://baike.baidu.com/
+Wikipedia		https://www.wikipedia.org/
+百度百科			https://baike.baidu.com/
 Google Dataset Search	https://toolbox.google.com/datasetsearch
 
 Social
-Twitter	https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
-Facebook	https://developers.facebook.com/docs/marketing-apis
+Twitter		https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html
+Facebook		https://developers.facebook.com/docs/marketing-apis
 SiteSummary	https://www.fourtonfish.com/sitesummary/	
-新浪微博	http://open.weibo.com/
+新浪微博		http://open.weibo.com/
 
 Financial
-Paypal	https://developer.paypal.com/
+Paypal				https://developer.paypal.com/
 Thomson Reuters Open Calais	http://www.opencalais.com/opencalais-api/
-CrunchBase	https://data.crunchbase.com/docs
-Stripe	https://stripe.com/docs/api#authentication
-CoinDesk	https://www.coindesk.com/api/
+CrunchBase			https://data.crunchbase.com/docs
+Stripe				https://stripe.com/docs/api#authentication
+CoinDesk				https://www.coindesk.com/api/
 New York Times Campaign Finance	http://developer.nytimes.com/
 
 Government
-Google Public Data	https://www.google.com/publicdata/directory
+Google Public Data				https://www.google.com/publicdata/directory
 Consumer Financial Protection Bureau HMDA	https://www.consumerfinance.gov/data-research/hmda/api
-Nat Code Austria	http://www.natcode.at/api/reg.asmx?op=CheckAustria
+Nat Code Austria				http://www.natcode.at/api/reg.asmx?op=CheckAustria
 
 Statistics
 U.S. Census Bureau Population Estimates and Projections	https://api.census.gov/data/2014/pep/projpop
-U.S. Census Bureau Language Statistics	https://www.census.gov/data/developers/data-sets/language-stats.html
-U.S. Census Bureau Economy	https://www.census.gov/data/developers/data-sets/economic-census.html
-U.S. Census Bureau Geocoding Services	https://www.census.gov/data/developers/data-sets/Geocoding-services.html
-U.S. Census Bureau American Community Survey	https://www.census.gov/data/developers/data-sets/acs-1year.html
+U.S. Census Bureau Language Statistics			https://www.census.gov/data/developers/data-sets/language-stats.html
+U.S. Census Bureau Economy				https://www.census.gov/data/developers/data-sets/economic-census.html
+U.S. Census Bureau Geocoding Services			https://www.census.gov/data/developers/data-sets/Geocoding-services.html
+U.S. Census Bureau American Community Survey		https://www.census.gov/data/developers/data-sets/acs-1year.html
 
 Transportation
-Vehicle Smart	https://www.getvehiclesmart.com/vehicle-smart-api.html	
+Vehicle Smart			https://www.getvehiclesmart.com/vehicle-smart-api.html	
 Department of For-Hire Vehicles	https://dctcdata.portal.azure-api.net/
-12306铁路	https://dctcdata.portal.azure-api.net/
-中国航信	http://adapis.travelsky.com/adapis/UserAction.do?action=login
+12306铁路			https://kyfw.12306.cn/otn/leftTicketPrice/init 
+中国航信				http://adapis.travelsky.com/adapis/UserAction.do?action=login
 
 Environment
-中国空气质量在线监测分析平台	https://www.aqistudy.cn/
+中国空气质量在线监测分析平台		https://www.aqistudy.cn/
 
