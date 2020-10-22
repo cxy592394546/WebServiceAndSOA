@@ -102,3 +102,7 @@
         map.addControl(new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));   //右下角，打开
     }
 })(window, undefined);
+
+
+// Made by 1853444 崔鑫宇  
+// Date：  10/22/2020
