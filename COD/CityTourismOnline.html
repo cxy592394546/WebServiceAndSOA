@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cityTourismOnline</title>
+    <link rel="stylesheet" type="text/css" href="./css/page.css"/>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=dQNLVcHYjhz2TGQDdeRVemSYCkeAWCng"></script>
+</head>
+<body>   
+    <div class="search">
+        <p>
+            <b>Welcome to CityTourismOnline</b>
+        </p>
+        <form name="search" method="post" action="">
+            <input type="text" name="cityToSearch" placeholder="请输入城市名称">
+            <input type="button"  value="搜索" id='btnSearch'>
+        </form> 
+    </div>
+    <div class="basicMess">
+        <wiki></wiki>
+    </div>
+    <div class="cityWeather">
+        <weather></weather>
+    </div>
+    <div class="tourismList">
+        <tourism></tourism>
+    </div>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/javascript" src="./js/search.js"></script>
+
+<!--    Made by 1853444 崔鑫宇    -->
