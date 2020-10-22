@@ -1,0 +1,79 @@
+html{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.search{
+	position: absolute;
+	background: #39d;
+	top: 0;  
+	width: 100%;
+	height: 20%;
+	border: none;
+}
+div.search form{
+	width: 100%;
+	height: 100%;
+}
+div.search form button{
+	width: 100px;
+	height: 100%;
+	font-size: 16px;
+	letter-spacing: 5px;
+	border: none;
+}
+div.search form text{
+	width: 400px;
+	height: 100%;
+	font-size: 16px;
+	text-indent: 40px;
+	border: none;
+	float: left;
+}
+
+#container {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 50%;
+	height: 50%;
+}
+
+div.basicMess{
+	position: absolute;
+	background: mistyrose;
+	left: 0%;
+	top: 20%;
+	width: 50%;
+	height: 30%;
+}
+
+div.cityWeather{
+	position: absolute;
+	background: peachpuff;
+	right: 0%;
+	top: 20%;
+	width: 50%;
+	height: 30%;
+}
+div.tourismList{
+	position: absolute;
+	background: papayawhip;
+	left: 0%;
+	top: 50%;
+	width: 50%;
+	height: 50%;
+}

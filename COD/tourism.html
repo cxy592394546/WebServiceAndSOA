@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>获取 xml 数据</h1>
+    <input type="button"  value="获取Xml" id='btnXml'>
+</body>
+</html>
+<script type="text/javascript">
+    function getNodeText(node){
+    	if(window.ActiveXObject){//IE
+    		return node.text;
+    	}
+        else{//其他
+    		if(node.nodeType == 1){
+    			return node.textContent;
+    		}
+    	}
+    }
+    document.querySelector("#btnXml").onclick = function () {
+        var ajax =  new XMLHttpRequest;
+        city = "上海"
+        key = 'f198a60dbe2343cf44ad13fdb307b939'
+        url = 'https://restapi.amap.com/v3/place/text?keywords=景点&city='+city+'&output=xml&offset=10&page=1&key='+key+'&extensions=all'        
+        ajax.open('GET', url);
+        ajax.send(); 
+        ajax.onreadystatechange = function () {
+			if (ajax.readyState==4&&ajax.status==200) {
+                //xml 对象的处理
+                var data = ajax.responseXML;
+                var res = data.getElementsByTagName('response')[0];
+                console.log(res);
+                var pois = res.getElementsByTagName('pois')[0];
+                console.log(pois);
+                var poi = res.getElementsByTagName('poi');
+                var str = '';
+                for(var i=0;i<poi.length;i++){
+                    var Npoi = poi[i];
+                    var name = Npoi.getElementsByTagName('name')[0];
+                    var addr = Npoi.getElementsByTagName('address')[0];
+                    str += '<tr><td><a href="https://zh.wikipedia.org/zh-cn/'+ getNodeText(name) +'">'+getNodeText(name)+'</a></td>&nbsp&nbsp<td>'+getNodeText(addr)+'</td><br></tr>';
+                }           
+                document.body.innerHTML = str;
+            }
+        }   
+    }
+</script>
