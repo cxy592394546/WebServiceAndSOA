@@ -40,7 +40,7 @@
         }
         //天行数据api
         var Air_ajax =  new XMLHttpRequest;
-        Air_Key = '6b3310d6a25b188affc921e9f07845b7'
+        Air_Key = YourKey
         Air_Url = "http://api.tianapi.com/txapi/aqi/index?key="+ Air_Key +"&area=" + city       
         Air_ajax.open('GET', Air_Url);
         Air_ajax.send(); 
@@ -68,7 +68,7 @@
         }
         //和风天气api
         var Weather_ajax =  new XMLHttpRequest;
-        Weather_Key = 'e52a94e351194d439cc2d7a46095551b'
+        Weather_Key = YourKey
         Weather_Url = "https://free-api.heweather.com/s6/weather?location=" + city + "&key=" + Weather_Key       
         Weather_ajax.open('GET', Weather_Url);
         Weather_ajax.send(); 
@@ -95,7 +95,7 @@
         }
         //高德地图api
         var Tourism_ajax =  new XMLHttpRequest;
-        Tourism_Key = 'f198a60dbe2343cf44ad13fdb307b939'
+        Tourism_Key = YourKey
         Tourism_Url = 'https://restapi.amap.com/v3/place/text?keywords=景点&city='+city+'&output=xml&offset=10&page=1&key='+Tourism_Key+'&extensions=all'        
         Tourism_ajax.open('GET', Tourism_Url);
         Tourism_ajax.send(); 
@@ -113,7 +113,8 @@
                     var Npoi = poi[i];
                     var name = Npoi.getElementsByTagName('name')[0];
                     var addr = Npoi.getElementsByTagName('address')[0];
-                    str += '<li>'+getNodeText(name)+'———<a href="https://zh.wikipedia.org/zh-cn/'+ getNodeText(name) +'">维基百科</a>&nbsp&nbsp地址：'+getNodeText(addr)+'</li>';
+                    str += '<li>'+getNodeText(name)+'———<a href="https://zh.wikipedia.org/zh-cn/'+ getNodeText(name) +
+                        '">维基百科</a>&nbsp&nbsp地址：'+getNodeText(addr)+'</li>';
                 }
                 str += '</ul>'
                 str  += '<tr><td>（数据来自<a href="https://lbs.amap.com/">高德地图</a>）</td></tr>' 
