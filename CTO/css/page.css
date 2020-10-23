@@ -45,7 +45,7 @@ div.search form{
 
 div.basicMess{
 	position: absolute;
-	background: mistyrose;
+	background: oldlace;
 	left: 0%;
 	top: 20%;
 	width: 50%;
@@ -54,10 +54,19 @@ div.basicMess{
 
 div.cityWeather{
 	position: absolute;
-	background: peachpuff;
+	background: lightgoldenrodyellow;
+	right: 25%;
+	top: 20%;
+	width: 25%;
+	height: 30%;
+}
+
+div.airCondition{
+	position: absolute;
+	background: papayawhip;
 	right: 0%;
 	top: 20%;
-	width: 50%;
+	width: 25%;
 	height: 30%;
 }
 
@@ -71,4 +80,4 @@ div.tourismList{
 }
 
 /* Made by 1853444 崔鑫宇  
-Date：	10/22/2020 */
+Date：	10/23/2020 */

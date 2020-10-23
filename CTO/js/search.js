@@ -38,6 +38,34 @@
                 document.querySelector('wiki').innerHTML = str;
             }
         }
+        //天行数据api
+        var Air_ajax =  new XMLHttpRequest;
+        Air_Key = '6b3310d6a25b188affc921e9f07845b7'
+        Air_Url = "http://api.tianapi.com/txapi/aqi/index?key="+ Air_Key +"&area=" + city       
+        Air_ajax.open('GET', Air_Url);
+        Air_ajax.send(); 
+        Air_ajax.onreadystatechange = function () {
+            if (Air_ajax.readyState==4&&Air_ajax.status==200) {
+                // json 对象的处理
+                console.log(Air_ajax.responseText);
+    
+                // 转化为 js对象
+                var jsObj = JSON.parse(Air_ajax.responseText);
+                console.log(jsObj);
+    
+                var str = '';
+                str+='<ul>';
+                str+='<p>'+'pm2_5：'+jsObj.newslist[0].pm2_5+'</p>';
+                str+='<p>'+'首要污染物：'+jsObj.newslist[0].primary_pollutant+'</p>';
+                str+='<p>'+'空气质量指数：'+jsObj.newslist[0].aqi+'</p>';
+                str+='<p>'+'空气质量指数类别：'+jsObj.newslist[0].quality+'</p>';
+                str+='<p>'+'更新时间：'+jsObj.newslist[0].time+'</p>';
+                str+='</ul>';
+                str+='（数据来自<a href="https://www.tianapi.com/">天行数据<a>)';
+    
+                document.querySelector('air').innerHTML = str;
+            }
+        }
         //和风天气api
         var Weather_ajax =  new XMLHttpRequest;
         Weather_Key = 'e52a94e351194d439cc2d7a46095551b'
@@ -105,4 +133,4 @@
 
 
 // Made by 1853444 崔鑫宇  
-// Date：  10/22/2020
+// Date：  10/23/2020
