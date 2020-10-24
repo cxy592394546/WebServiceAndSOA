@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+       <xs:element name="response">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="status" type="xs:int"></xs:element>
+                            <xs:element name="count" type="xs:int"></xs:element>
+                            <xs:element name="info" type="xs:string"></xs:element>
+                            <xs:element name="infocode" type="xs:int"></xs:element>
+                            <xs:element name="suggestion">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="keywords">
+                                                        <xs:complexType>
+                                                               <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                                 <xs:element name="cities">
+                                                        <xs:complexType>
+                                                               <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="pois">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="poi" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="id" type="xs:string"></xs:element>
+                                                                      <xs:element name="parent"></xs:element>
+                                                                      <xs:element name="childtype"></xs:element>
+                                                                      <xs:element name="name" type="xs:string"></xs:element>
+                                                                      <xs:element name="tag"></xs:element>
+                                                                      <xs:element name="type" type="xs:string"></xs:element>
+                                                                      <xs:element name="typecode" type="xs:int"></xs:element>
+                                                                      <xs:element name="biz_type" type="xs:string"></xs:element>
+                                                                      <xs:element name="address" type="xs:string"></xs:element>
+                                                                      <xs:element name="location" type="xs:string"></xs:element>
+                                                                      <xs:element name="tel" type="xs:string"></xs:element>
+                                                                      <xs:element name="postcode"></xs:element>
+                                                                      <xs:element name="website" type="xs:string"></xs:element>
+                                                                      <xs:element name="email"></xs:element>
+                                                                      <xs:element name="pcode" type="xs:int"></xs:element>
+                                                                      <xs:element name="pname" type="xs:string"></xs:element>
+                                                                      <xs:element name="citycode" type="xs:int"></xs:element>
+                                                                      <xs:element name="cityname" type="xs:string"></xs:element>
+                                                                      <xs:element name="adcode" type="xs:int"></xs:element>
+                                                                      <xs:element name="adname" type="xs:string"></xs:element>
+                                                                      <xs:element name="importance"></xs:element>
+                                                                      <xs:element name="shopid"></xs:element>
+                                                                      <xs:element name="shopinfo" type="xs:int"></xs:element>
+                                                                      <xs:element name="poiweight"></xs:element>
+                                                                      <xs:element name="gridcode" type="xs:int"></xs:element>
+                                                                      <xs:element name="distance"></xs:element>
+                                                                      <xs:element name="alias" type="xs:string"></xs:element>
+                                                                      <xs:element name="navi_poiid" type="xs:string"></xs:element>
+                                                                      <xs:element name="business_area" type="xs:string"></xs:element>
+                                                                      <xs:element name="entr_location" type="xs:string"></xs:element>
+                                                                      <xs:element name="exit_location"></xs:element>
+                                                                      <xs:element name="match" type="xs:int"></xs:element>
+                                                                      <xs:element name="recommend" type="xs:int"></xs:element>
+                                                                      <xs:element name="timestamp" type="xs:string"></xs:element>
+                                                                      <xs:element name="indoor_map" type="xs:int"></xs:element>
+                                                                      <xs:element name="groupbuy_num" type="xs:int"></xs:element>
+                                                                      <xs:element name="discount_num" type="xs:int"></xs:element>
+                                                                      <xs:element name="biz_ext">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="rating" type="xs:double"></xs:element>
+                                                                                           <xs:element name="cost" type="xs:int"></xs:element>
+                                                                                           <xs:element name="ticket_ordering" type="xs:int"></xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="event"></xs:element>
+                                                                      <xs:element name="indoor_data">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="cpid"></xs:element>
+                                                                                           <xs:element name="floor"></xs:element>
+                                                                                           <xs:element name="truefloor"></xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="photos">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="photo" maxOccurs="unbounded">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="title"></xs:element>
+                                                                                                                <xs:element name="url" type="xs:string"></xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                       </xs:sequence>
+                                                                                    <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="children">
+                                                                             <xs:complexType>
+                                                                                    <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                  </xs:sequence>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                          <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

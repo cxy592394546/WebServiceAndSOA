@@ -1,0 +1,277 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "batchcomplete": true,
+            "continue": {
+                "sroffset": 10,
+                "continue": "-||"
+            },
+            "query": {
+                "searchinfo": {
+                    "totalhits": 15000
+                },
+                "search": [
+                    {
+                        "ns": 0,
+                        "title": "广州市",
+                        "pageid": 1329,
+                        "size": 233026,
+                        "wordcount": 23605,
+                        "snippet": "(<span class=\"searchmatch\">广州市</span>) <span class=\"searchmatch\">广州市</span>，通称<span class=\"searchmatch\">广州</span>（郵政式拼音：Canton），简称广或穗，别称羊城、花城，是中华人民共和国广东省省会、副省级<span class=\"searchmatch\">市</span>、国家中心城市、首批沿海开放城市、国际商贸中心和综合交通枢纽，中国人民解放军南部战区联合作战指挥部所在地，2010年亚洲运动会主办城市，被广泛视为中国大陆的一線城市之一。 <span class=\"searchmatch\">广州</span>",
+                        "timestamp": "2020-10-11T21:29:53Z"
+                    }
+                ]
+            }
+        }
+    ],
+    "required": [
+        "batchcomplete",
+        "continue",
+        "query"
+    ],
+    "properties": {
+        "batchcomplete": {
+            "$id": "#/properties/batchcomplete",
+            "type": "boolean",
+            "title": "The batchcomplete schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "continue": {
+            "$id": "#/properties/continue",
+            "type": "object",
+            "title": "The continue schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "sroffset": 10,
+                    "continue": "-||"
+                }
+            ],
+            "required": [
+                "sroffset",
+                "continue"
+            ],
+            "properties": {
+                "sroffset": {
+                    "$id": "#/properties/continue/properties/sroffset",
+                    "type": "integer",
+                    "title": "The sroffset schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        10
+                    ]
+                },
+                "continue": {
+                    "$id": "#/properties/continue/properties/continue",
+                    "type": "string",
+                    "title": "The continue schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "-||"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "query": {
+            "$id": "#/properties/query",
+            "type": "object",
+            "title": "The query schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "searchinfo": {
+                        "totalhits": 15000
+                    },
+                    "search": [
+                        {
+                            "ns": 0,
+                            "title": "广州市",
+                            "pageid": 1329,
+                            "size": 233026,
+                            "wordcount": 23605,
+                            "snippet": "(<span class=\"searchmatch\">广州市</span>) <span class=\"searchmatch\">广州市</span>，通称<span class=\"searchmatch\">广州</span>（郵政式拼音：Canton），简称广或穗，别称羊城、花城，是中华人民共和国广东省省会、副省级<span class=\"searchmatch\">市</span>、国家中心城市、首批沿海开放城市、国际商贸中心和综合交通枢纽，中国人民解放军南部战区联合作战指挥部所在地，2010年亚洲运动会主办城市，被广泛视为中国大陆的一線城市之一。 <span class=\"searchmatch\">广州</span>",
+                            "timestamp": "2020-10-11T21:29:53Z"
+                        }
+                    ]
+                }
+            ],
+            "required": [
+                "searchinfo",
+                "search"
+            ],
+            "properties": {
+                "searchinfo": {
+                    "$id": "#/properties/query/properties/searchinfo",
+                    "type": "object",
+                    "title": "The searchinfo schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "totalhits": 15000
+                        }
+                    ],
+                    "required": [
+                        "totalhits"
+                    ],
+                    "properties": {
+                        "totalhits": {
+                            "$id": "#/properties/query/properties/searchinfo/properties/totalhits",
+                            "type": "integer",
+                            "title": "The totalhits schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [
+                                15000
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "search": {
+                    "$id": "#/properties/query/properties/search",
+                    "type": "array",
+                    "title": "The search schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "ns": 0,
+                                "title": "广州市",
+                                "pageid": 1329,
+                                "size": 233026,
+                                "wordcount": 23605,
+                                "snippet": "(<span class=\"searchmatch\">广州市</span>) <span class=\"searchmatch\">广州市</span>，通称<span class=\"searchmatch\">广州</span>（郵政式拼音：Canton），简称广或穗，别称羊城、花城，是中华人民共和国广东省省会、副省级<span class=\"searchmatch\">市</span>、国家中心城市、首批沿海开放城市、国际商贸中心和综合交通枢纽，中国人民解放军南部战区联合作战指挥部所在地，2010年亚洲运动会主办城市，被广泛视为中国大陆的一線城市之一。 <span class=\"searchmatch\">广州</span>",
+                                "timestamp": "2020-10-11T21:29:53Z"
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/query/properties/search/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/query/properties/search/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "ns": 0,
+                                        "title": "广州市",
+                                        "pageid": 1329,
+                                        "size": 233026,
+                                        "wordcount": 23605,
+                                        "snippet": "(<span class=\"searchmatch\">广州市</span>) <span class=\"searchmatch\">广州市</span>，通称<span class=\"searchmatch\">广州</span>（郵政式拼音：Canton），简称广或穗，别称羊城、花城，是中华人民共和国广东省省会、副省级<span class=\"searchmatch\">市</span>、国家中心城市、首批沿海开放城市、国际商贸中心和综合交通枢纽，中国人民解放军南部战区联合作战指挥部所在地，2010年亚洲运动会主办城市，被广泛视为中国大陆的一線城市之一。 <span class=\"searchmatch\">广州</span>",
+                                        "timestamp": "2020-10-11T21:29:53Z"
+                                    }
+                                ],
+                                "required": [
+                                    "ns",
+                                    "title",
+                                    "pageid",
+                                    "size",
+                                    "wordcount",
+                                    "snippet",
+                                    "timestamp"
+                                ],
+                                "properties": {
+                                    "ns": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/ns",
+                                        "type": "integer",
+                                        "title": "The ns schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            0
+                                        ]
+                                    },
+                                    "title": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/title",
+                                        "type": "string",
+                                        "title": "The title schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "广州市"
+                                        ]
+                                    },
+                                    "pageid": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/pageid",
+                                        "type": "integer",
+                                        "title": "The pageid schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            1329
+                                        ]
+                                    },
+                                    "size": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/size",
+                                        "type": "integer",
+                                        "title": "The size schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            233026
+                                        ]
+                                    },
+                                    "wordcount": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/wordcount",
+                                        "type": "integer",
+                                        "title": "The wordcount schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            23605
+                                        ]
+                                    },
+                                    "snippet": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/snippet",
+                                        "type": "string",
+                                        "title": "The snippet schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "(<span class=\"searchmatch\">广州市</span>) <span class=\"searchmatch\">广州市</span>，通称<span class=\"searchmatch\">广州</span>（郵政式拼音：Canton），简称广或穗，别称羊城、花城，是中华人民共和国广东省省会、副省级<span class=\"searchmatch\">市</span>、国家中心城市、首批沿海开放城市、国际商贸中心和综合交通枢纽，中国人民解放军南部战区联合作战指挥部所在地，2010年亚洲运动会主办城市，被广泛视为中国大陆的一線城市之一。 <span class=\"searchmatch\">广州</span>"
+                                        ]
+                                    },
+                                    "timestamp": {
+                                        "$id": "#/properties/query/properties/search/items/anyOf/0/properties/timestamp",
+                                        "type": "string",
+                                        "title": "The timestamp schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2020-10-11T21:29:53Z"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

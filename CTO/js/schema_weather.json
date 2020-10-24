@@ -1,0 +1,869 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "HeWeather6": [
+                {
+                    "basic": {
+                        "cid": "CN101280101",
+                        "location": "广州",
+                        "parent_city": "广州",
+                        "admin_area": "广东省",
+                        "cnty": "中国",
+                        "lat": "23.12517738",
+                        "lon": "113.28063965",
+                        "tz": "+8.00"
+                    },
+                    "update": {
+                        "loc": "2020-10-24 15:00",
+                        "utc": "2020-10-24 07:00"
+                    },
+                    "status": "ok",
+                    "now": {
+                        "cloud": "96",
+                        "cond_code": "101",
+                        "cond_txt": "多云",
+                        "fl": "26",
+                        "hum": "37",
+                        "pcpn": "0.0",
+                        "pres": "1009",
+                        "tmp": "26",
+                        "vis": "18",
+                        "wind_deg": "120",
+                        "wind_dir": "东南风",
+                        "wind_sc": "1",
+                        "wind_spd": "4"
+                    },
+                    "daily_forecast": [
+                        {
+                            "cond_code_d": "104",
+                            "cond_code_n": "101",
+                            "cond_txt_d": "阴",
+                            "cond_txt_n": "多云",
+                            "date": "2020-10-24",
+                            "hum": "43",
+                            "mr": "13:45",
+                            "ms": "00:00",
+                            "pcpn": "0.0",
+                            "pop": "23",
+                            "pres": "1014",
+                            "sr": "06:28",
+                            "ss": "17:52",
+                            "tmp_max": "23",
+                            "tmp_min": "18",
+                            "uv_index": "3",
+                            "vis": "25",
+                            "wind_deg": "0",
+                            "wind_dir": "北风",
+                            "wind_sc": "1-2",
+                            "wind_spd": "3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "required": [
+        "HeWeather6"
+    ],
+    "properties": {
+        "HeWeather6": {
+            "$id": "#/properties/HeWeather6",
+            "type": "array",
+            "title": "The HeWeather6 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "basic": {
+                            "cid": "CN101280101",
+                            "location": "广州",
+                            "parent_city": "广州",
+                            "admin_area": "广东省",
+                            "cnty": "中国",
+                            "lat": "23.12517738",
+                            "lon": "113.28063965",
+                            "tz": "+8.00"
+                        },
+                        "update": {
+                            "loc": "2020-10-24 15:00",
+                            "utc": "2020-10-24 07:00"
+                        },
+                        "status": "ok",
+                        "now": {
+                            "cloud": "96",
+                            "cond_code": "101",
+                            "cond_txt": "多云",
+                            "fl": "26",
+                            "hum": "37",
+                            "pcpn": "0.0",
+                            "pres": "1009",
+                            "tmp": "26",
+                            "vis": "18",
+                            "wind_deg": "120",
+                            "wind_dir": "东南风",
+                            "wind_sc": "1",
+                            "wind_spd": "4"
+                        },
+                        "daily_forecast": [
+                            {
+                                "cond_code_d": "104",
+                                "cond_code_n": "101",
+                                "cond_txt_d": "阴",
+                                "cond_txt_n": "多云",
+                                "date": "2020-10-24",
+                                "hum": "43",
+                                "mr": "13:45",
+                                "ms": "00:00",
+                                "pcpn": "0.0",
+                                "pop": "23",
+                                "pres": "1014",
+                                "sr": "06:28",
+                                "ss": "17:52",
+                                "tmp_max": "23",
+                                "tmp_min": "18",
+                                "uv_index": "3",
+                                "vis": "25",
+                                "wind_deg": "0",
+                                "wind_dir": "北风",
+                                "wind_sc": "1-2",
+                                "wind_spd": "3"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/HeWeather6/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/HeWeather6/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "basic": {
+                                    "cid": "CN101280101",
+                                    "location": "广州",
+                                    "parent_city": "广州",
+                                    "admin_area": "广东省",
+                                    "cnty": "中国",
+                                    "lat": "23.12517738",
+                                    "lon": "113.28063965",
+                                    "tz": "+8.00"
+                                },
+                                "update": {
+                                    "loc": "2020-10-24 15:00",
+                                    "utc": "2020-10-24 07:00"
+                                },
+                                "status": "ok",
+                                "now": {
+                                    "cloud": "96",
+                                    "cond_code": "101",
+                                    "cond_txt": "多云",
+                                    "fl": "26",
+                                    "hum": "37",
+                                    "pcpn": "0.0",
+                                    "pres": "1009",
+                                    "tmp": "26",
+                                    "vis": "18",
+                                    "wind_deg": "120",
+                                    "wind_dir": "东南风",
+                                    "wind_sc": "1",
+                                    "wind_spd": "4"
+                                },
+                                "daily_forecast": [
+                                    {
+                                        "cond_code_d": "104",
+                                        "cond_code_n": "101",
+                                        "cond_txt_d": "阴",
+                                        "cond_txt_n": "多云",
+                                        "date": "2020-10-24",
+                                        "hum": "43",
+                                        "mr": "13:45",
+                                        "ms": "00:00",
+                                        "pcpn": "0.0",
+                                        "pop": "23",
+                                        "pres": "1014",
+                                        "sr": "06:28",
+                                        "ss": "17:52",
+                                        "tmp_max": "23",
+                                        "tmp_min": "18",
+                                        "uv_index": "3",
+                                        "vis": "25",
+                                        "wind_deg": "0",
+                                        "wind_dir": "北风",
+                                        "wind_sc": "1-2",
+                                        "wind_spd": "3"
+                                    }
+                                ]
+                            }
+                        ],
+                        "required": [
+                            "basic",
+                            "update",
+                            "status",
+                            "now",
+                            "daily_forecast"
+                        ],
+                        "properties": {
+                            "basic": {
+                                "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic",
+                                "type": "object",
+                                "title": "The basic schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "cid": "CN101280101",
+                                        "location": "广州",
+                                        "parent_city": "广州",
+                                        "admin_area": "广东省",
+                                        "cnty": "中国",
+                                        "lat": "23.12517738",
+                                        "lon": "113.28063965",
+                                        "tz": "+8.00"
+                                    }
+                                ],
+                                "required": [
+                                    "cid",
+                                    "location",
+                                    "parent_city",
+                                    "admin_area",
+                                    "cnty",
+                                    "lat",
+                                    "lon",
+                                    "tz"
+                                ],
+                                "properties": {
+                                    "cid": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/cid",
+                                        "type": "string",
+                                        "title": "The cid schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "CN101280101"
+                                        ]
+                                    },
+                                    "location": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/location",
+                                        "type": "string",
+                                        "title": "The location schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "广州"
+                                        ]
+                                    },
+                                    "parent_city": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/parent_city",
+                                        "type": "string",
+                                        "title": "The parent_city schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "广州"
+                                        ]
+                                    },
+                                    "admin_area": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/admin_area",
+                                        "type": "string",
+                                        "title": "The admin_area schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "广东省"
+                                        ]
+                                    },
+                                    "cnty": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/cnty",
+                                        "type": "string",
+                                        "title": "The cnty schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "中国"
+                                        ]
+                                    },
+                                    "lat": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/lat",
+                                        "type": "string",
+                                        "title": "The lat schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "23.12517738"
+                                        ]
+                                    },
+                                    "lon": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/lon",
+                                        "type": "string",
+                                        "title": "The lon schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "113.28063965"
+                                        ]
+                                    },
+                                    "tz": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/basic/properties/tz",
+                                        "type": "string",
+                                        "title": "The tz schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "+8.00"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            },
+                            "update": {
+                                "$id": "#/properties/HeWeather6/items/anyOf/0/properties/update",
+                                "type": "object",
+                                "title": "The update schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "loc": "2020-10-24 15:00",
+                                        "utc": "2020-10-24 07:00"
+                                    }
+                                ],
+                                "required": [
+                                    "loc",
+                                    "utc"
+                                ],
+                                "properties": {
+                                    "loc": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/update/properties/loc",
+                                        "type": "string",
+                                        "title": "The loc schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2020-10-24 15:00"
+                                        ]
+                                    },
+                                    "utc": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/update/properties/utc",
+                                        "type": "string",
+                                        "title": "The utc schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2020-10-24 07:00"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            },
+                            "status": {
+                                "$id": "#/properties/HeWeather6/items/anyOf/0/properties/status",
+                                "type": "string",
+                                "title": "The status schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "ok"
+                                ]
+                            },
+                            "now": {
+                                "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now",
+                                "type": "object",
+                                "title": "The now schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "cloud": "96",
+                                        "cond_code": "101",
+                                        "cond_txt": "多云",
+                                        "fl": "26",
+                                        "hum": "37",
+                                        "pcpn": "0.0",
+                                        "pres": "1009",
+                                        "tmp": "26",
+                                        "vis": "18",
+                                        "wind_deg": "120",
+                                        "wind_dir": "东南风",
+                                        "wind_sc": "1",
+                                        "wind_spd": "4"
+                                    }
+                                ],
+                                "required": [
+                                    "cloud",
+                                    "cond_code",
+                                    "cond_txt",
+                                    "fl",
+                                    "hum",
+                                    "pcpn",
+                                    "pres",
+                                    "tmp",
+                                    "vis",
+                                    "wind_deg",
+                                    "wind_dir",
+                                    "wind_sc",
+                                    "wind_spd"
+                                ],
+                                "properties": {
+                                    "cloud": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/cloud",
+                                        "type": "string",
+                                        "title": "The cloud schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "96"
+                                        ]
+                                    },
+                                    "cond_code": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/cond_code",
+                                        "type": "string",
+                                        "title": "The cond_code schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "101"
+                                        ]
+                                    },
+                                    "cond_txt": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/cond_txt",
+                                        "type": "string",
+                                        "title": "The cond_txt schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "多云"
+                                        ]
+                                    },
+                                    "fl": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/fl",
+                                        "type": "string",
+                                        "title": "The fl schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "26"
+                                        ]
+                                    },
+                                    "hum": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/hum",
+                                        "type": "string",
+                                        "title": "The hum schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "37"
+                                        ]
+                                    },
+                                    "pcpn": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/pcpn",
+                                        "type": "string",
+                                        "title": "The pcpn schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0.0"
+                                        ]
+                                    },
+                                    "pres": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/pres",
+                                        "type": "string",
+                                        "title": "The pres schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1009"
+                                        ]
+                                    },
+                                    "tmp": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/tmp",
+                                        "type": "string",
+                                        "title": "The tmp schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "26"
+                                        ]
+                                    },
+                                    "vis": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/vis",
+                                        "type": "string",
+                                        "title": "The vis schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "18"
+                                        ]
+                                    },
+                                    "wind_deg": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/wind_deg",
+                                        "type": "string",
+                                        "title": "The wind_deg schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "120"
+                                        ]
+                                    },
+                                    "wind_dir": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/wind_dir",
+                                        "type": "string",
+                                        "title": "The wind_dir schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "东南风"
+                                        ]
+                                    },
+                                    "wind_sc": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/wind_sc",
+                                        "type": "string",
+                                        "title": "The wind_sc schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1"
+                                        ]
+                                    },
+                                    "wind_spd": {
+                                        "$id": "#/properties/HeWeather6/items/anyOf/0/properties/now/properties/wind_spd",
+                                        "type": "string",
+                                        "title": "The wind_spd schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "4"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            },
+                            "daily_forecast": {
+                                "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast",
+                                "type": "array",
+                                "title": "The daily_forecast schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        {
+                                            "cond_code_d": "104",
+                                            "cond_code_n": "101",
+                                            "cond_txt_d": "阴",
+                                            "cond_txt_n": "多云",
+                                            "date": "2020-10-24",
+                                            "hum": "43",
+                                            "mr": "13:45",
+                                            "ms": "00:00",
+                                            "pcpn": "0.0",
+                                            "pop": "23",
+                                            "pres": "1014",
+                                            "sr": "06:28",
+                                            "ss": "17:52",
+                                            "tmp_max": "23",
+                                            "tmp_min": "18",
+                                            "uv_index": "3",
+                                            "vis": "25",
+                                            "wind_deg": "0",
+                                            "wind_dir": "北风",
+                                            "wind_sc": "1-2",
+                                            "wind_spd": "3"
+                                        }
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0",
+                                            "type": "object",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": {},
+                                            "examples": [
+                                                {
+                                                    "cond_code_d": "104",
+                                                    "cond_code_n": "101",
+                                                    "cond_txt_d": "阴",
+                                                    "cond_txt_n": "多云",
+                                                    "date": "2020-10-24",
+                                                    "hum": "43",
+                                                    "mr": "13:45",
+                                                    "ms": "00:00",
+                                                    "pcpn": "0.0",
+                                                    "pop": "23",
+                                                    "pres": "1014",
+                                                    "sr": "06:28",
+                                                    "ss": "17:52",
+                                                    "tmp_max": "23",
+                                                    "tmp_min": "18",
+                                                    "uv_index": "3",
+                                                    "vis": "25",
+                                                    "wind_deg": "0",
+                                                    "wind_dir": "北风",
+                                                    "wind_sc": "1-2",
+                                                    "wind_spd": "3"
+                                                }
+                                            ],
+                                            "required": [
+                                                "cond_code_d",
+                                                "cond_code_n",
+                                                "cond_txt_d",
+                                                "cond_txt_n",
+                                                "date",
+                                                "hum",
+                                                "mr",
+                                                "ms",
+                                                "pcpn",
+                                                "pop",
+                                                "pres",
+                                                "sr",
+                                                "ss",
+                                                "tmp_max",
+                                                "tmp_min",
+                                                "uv_index",
+                                                "vis",
+                                                "wind_deg",
+                                                "wind_dir",
+                                                "wind_sc",
+                                                "wind_spd"
+                                            ],
+                                            "properties": {
+                                                "cond_code_d": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/cond_code_d",
+                                                    "type": "string",
+                                                    "title": "The cond_code_d schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "104"
+                                                    ]
+                                                },
+                                                "cond_code_n": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/cond_code_n",
+                                                    "type": "string",
+                                                    "title": "The cond_code_n schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "101"
+                                                    ]
+                                                },
+                                                "cond_txt_d": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/cond_txt_d",
+                                                    "type": "string",
+                                                    "title": "The cond_txt_d schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "阴"
+                                                    ]
+                                                },
+                                                "cond_txt_n": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/cond_txt_n",
+                                                    "type": "string",
+                                                    "title": "The cond_txt_n schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "多云"
+                                                    ]
+                                                },
+                                                "date": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/date",
+                                                    "type": "string",
+                                                    "title": "The date schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "2020-10-24"
+                                                    ]
+                                                },
+                                                "hum": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/hum",
+                                                    "type": "string",
+                                                    "title": "The hum schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "43"
+                                                    ]
+                                                },
+                                                "mr": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/mr",
+                                                    "type": "string",
+                                                    "title": "The mr schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "13:45"
+                                                    ]
+                                                },
+                                                "ms": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/ms",
+                                                    "type": "string",
+                                                    "title": "The ms schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "00:00"
+                                                    ]
+                                                },
+                                                "pcpn": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/pcpn",
+                                                    "type": "string",
+                                                    "title": "The pcpn schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "0.0"
+                                                    ]
+                                                },
+                                                "pop": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/pop",
+                                                    "type": "string",
+                                                    "title": "The pop schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "23"
+                                                    ]
+                                                },
+                                                "pres": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/pres",
+                                                    "type": "string",
+                                                    "title": "The pres schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "1014"
+                                                    ]
+                                                },
+                                                "sr": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/sr",
+                                                    "type": "string",
+                                                    "title": "The sr schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "06:28"
+                                                    ]
+                                                },
+                                                "ss": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/ss",
+                                                    "type": "string",
+                                                    "title": "The ss schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "17:52"
+                                                    ]
+                                                },
+                                                "tmp_max": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/tmp_max",
+                                                    "type": "string",
+                                                    "title": "The tmp_max schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "23"
+                                                    ]
+                                                },
+                                                "tmp_min": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/tmp_min",
+                                                    "type": "string",
+                                                    "title": "The tmp_min schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "18"
+                                                    ]
+                                                },
+                                                "uv_index": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/uv_index",
+                                                    "type": "string",
+                                                    "title": "The uv_index schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "3"
+                                                    ]
+                                                },
+                                                "vis": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/vis",
+                                                    "type": "string",
+                                                    "title": "The vis schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "25"
+                                                    ]
+                                                },
+                                                "wind_deg": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/wind_deg",
+                                                    "type": "string",
+                                                    "title": "The wind_deg schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "0"
+                                                    ]
+                                                },
+                                                "wind_dir": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/wind_dir",
+                                                    "type": "string",
+                                                    "title": "The wind_dir schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "北风"
+                                                    ]
+                                                },
+                                                "wind_sc": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/wind_sc",
+                                                    "type": "string",
+                                                    "title": "The wind_sc schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "1-2"
+                                                    ]
+                                                },
+                                                "wind_spd": {
+                                                    "$id": "#/properties/HeWeather6/items/anyOf/0/properties/daily_forecast/items/anyOf/0/properties/wind_spd",
+                                                    "type": "string",
+                                                    "title": "The wind_spd schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "3"
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

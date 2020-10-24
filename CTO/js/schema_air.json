@@ -1,0 +1,277 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "code": 200,
+            "msg": "success",
+            "newslist": [
+                {
+                    "area": "广州",
+                    "area_code": "guangzhou",
+                    "so2": "6",
+                    "o3": "86",
+                    "pm2_5": "22",
+                    "primary_pollutant": "",
+                    "co": "0.7",
+                    "num": "106",
+                    "no2": "23",
+                    "quality": "优质",
+                    "aqi": "40",
+                    "pm10": "40",
+                    "o3_8h": "100",
+                    "time": "2020-10-24 15:00:01.197"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "code",
+        "msg",
+        "newslist"
+    ],
+    "properties": {
+        "code": {
+            "$id": "#/properties/code",
+            "type": "integer",
+            "title": "The code schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                200
+            ]
+        },
+        "msg": {
+            "$id": "#/properties/msg",
+            "type": "string",
+            "title": "The msg schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "success"
+            ]
+        },
+        "newslist": {
+            "$id": "#/properties/newslist",
+            "type": "array",
+            "title": "The newslist schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "area": "广州",
+                        "area_code": "guangzhou",
+                        "so2": "6",
+                        "o3": "86",
+                        "pm2_5": "22",
+                        "primary_pollutant": "",
+                        "co": "0.7",
+                        "num": "106",
+                        "no2": "23",
+                        "quality": "优质",
+                        "aqi": "40",
+                        "pm10": "40",
+                        "o3_8h": "100",
+                        "time": "2020-10-24 15:00:01.197"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/newslist/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/newslist/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "area": "广州",
+                                "area_code": "guangzhou",
+                                "so2": "6",
+                                "o3": "86",
+                                "pm2_5": "22",
+                                "primary_pollutant": "",
+                                "co": "0.7",
+                                "num": "106",
+                                "no2": "23",
+                                "quality": "优质",
+                                "aqi": "40",
+                                "pm10": "40",
+                                "o3_8h": "100",
+                                "time": "2020-10-24 15:00:01.197"
+                            }
+                        ],
+                        "required": [
+                            "area",
+                            "area_code",
+                            "so2",
+                            "o3",
+                            "pm2_5",
+                            "primary_pollutant",
+                            "co",
+                            "num",
+                            "no2",
+                            "quality",
+                            "aqi",
+                            "pm10",
+                            "o3_8h",
+                            "time"
+                        ],
+                        "properties": {
+                            "area": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/area",
+                                "type": "string",
+                                "title": "The area schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "广州"
+                                ]
+                            },
+                            "area_code": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/area_code",
+                                "type": "string",
+                                "title": "The area_code schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "guangzhou"
+                                ]
+                            },
+                            "so2": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/so2",
+                                "type": "string",
+                                "title": "The so2 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "6"
+                                ]
+                            },
+                            "o3": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/o3",
+                                "type": "string",
+                                "title": "The o3 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "86"
+                                ]
+                            },
+                            "pm2_5": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/pm2_5",
+                                "type": "string",
+                                "title": "The pm2_5 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "22"
+                                ]
+                            },
+                            "primary_pollutant": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/primary_pollutant",
+                                "type": "string",
+                                "title": "The primary_pollutant schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    ""
+                                ]
+                            },
+                            "co": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/co",
+                                "type": "string",
+                                "title": "The co schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "0.7"
+                                ]
+                            },
+                            "num": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/num",
+                                "type": "string",
+                                "title": "The num schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "106"
+                                ]
+                            },
+                            "no2": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/no2",
+                                "type": "string",
+                                "title": "The no2 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "23"
+                                ]
+                            },
+                            "quality": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/quality",
+                                "type": "string",
+                                "title": "The quality schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "优质"
+                                ]
+                            },
+                            "aqi": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/aqi",
+                                "type": "string",
+                                "title": "The aqi schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "40"
+                                ]
+                            },
+                            "pm10": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/pm10",
+                                "type": "string",
+                                "title": "The pm10 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "40"
+                                ]
+                            },
+                            "o3_8h": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/o3_8h",
+                                "type": "string",
+                                "title": "The o3_8h schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "100"
+                                ]
+                            },
+                            "time": {
+                                "$id": "#/properties/newslist/items/anyOf/0/properties/time",
+                                "type": "string",
+                                "title": "The time schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "2020-10-24 15:00:01.197"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}
