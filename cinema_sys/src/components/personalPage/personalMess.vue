@@ -1,12 +1,10 @@
 <template>
   <el-card class="box-card">
-    <img src="../../assets/img/logo.png" class="image">
-    <div clas="text">
-      用户名：{{ username }}
+    <div class="block">
+      <el-avatar shape="square" icon="el-icon-user-solid" :size="150"></el-avatar>
     </div>
-    <div class="text item">
-      
-    </div>
+    <div clas="text">用户名：{{ username }}</div>
+    <div class="text item"></div>
   </el-card>
 </template>
 
@@ -34,7 +32,7 @@ export default {
 
 <style>
 .text {
-  font-size: 14px;
+  font-size: 24px;
 }
 
 .item {
@@ -42,8 +40,8 @@ export default {
 }
 
 .image {
-    width: 25%;
-    display: block;
+  width: 25%;
+  display: block;
 }
 
 .clearfix:before,

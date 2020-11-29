@@ -107,7 +107,11 @@ export default {
 }
 
 .el-main {
-  background-color: #b3c0d1;
+  background-color: #83a2fa;
+}
+
+.el-aside {
+  background-color: rgb(60,60,60);
 }
 
 .out-button {

@@ -10,37 +10,7 @@
           <span>上映时间：{{ releaseTime }}</span>
         </div>
         <div class="text item">{{ movieInfo }}</div>
-        <template v-if="detectButton0">
-          <el-button type="success" round>
-            <span @click="jumpToShiGuang()">
-              从时光网购票
-            </span>
-          </el-button>
-        </template>
-        <template v-else>
-          <el-button type="success" round disabled>
-            <span @click="jumpToShiGuang()">
-              从时光网购票
-            </span>
-          </el-button>
-        </template>
-        <template v-if="detectButton1">
-          <el-button type="success" round>
-            <span @click="jumpToJingDong()">
-              从京东电影购票
-            </span>
-          </el-button>
-        </template>
-        <template v-else>
-          <el-button type="success" round disabled>
-            <span @click="jumpToJingDong()">
-              从京东电影购票
-            </span>
-          </el-button>
-        </template>
-        <el-button type="warning" round>
-          <span @click="likeMovie()">收藏</span>
-        </el-button>
+        <el-button type="danger" @click="deleteMovie()">删除影片</el-button>
       </el-card>
     </el-main>
     <!-- <el-footer>
@@ -60,13 +30,14 @@
 </template>
 
 <script>
-import wangEditor from "wangeditor";
+// import wangEditor from "wangeditor";
 export default {
   data() {
     return {
       movieName: window.sessionStorage.getItem("movieName"),
       releaseTime: window.sessionStorage.getItem("releaseTime"),
       movieInfo: window.sessionStorage.getItem("movieInfo"),
+      movieId: window.sessionStorage.getItem("movieId"),
 
       websites: "",
       // comments: "",
@@ -78,15 +49,6 @@ export default {
   },
 
   props: ["catchData"],
-
-  computed: {
-    detectButton0() {
-      return this.websites.hasOwnProperty("时光网");
-    },
-    detectButton1() {
-      return this.websites.hasOwnProperty("京东电影");
-    },
-  },
 
   mounted() {
     this.loadButton();
@@ -109,29 +71,10 @@ export default {
       window.sessionStorage.clear();
       this.$router.push("/welcomeIndex");
     },
-    loadButton() {
+    deleteMovie() {
       this.$axios
-        .get(
-          "http://channel.qingxu.website:20086/testGetApi?movieName=" +
-            this.movieName
-        )
-        .then((response) => (this.websites = response.data));
-    },
-    jumpToShiGuang() {
-      window.open(this.websites["时光网"].buyurl, "_blank");
-    },
-    jumpToJingDong() {
-      window.open(this.websites["京东电影"].buyurl, "_blank");
-    },
-    likeMovie() {
-      this.$axios
-        // .post(
-        //   "http://cinema.qingxu.website:20086/demo/addNewCMovie",
-        //   { cmovie_name: this.movieName, cmovie_time: this.date }
-        // )
-        .post(
-          "http://cinema.qingxu.website:8083/demo/addNewCMovie?cmovie_name="+
-          this.movieName + "&cmovie_time=" + this.date
+        .post("http://cinema.qingxu.website:8083/demo/deleteMovie?id="+
+          this.movieId
         )
         .then((response) => {
           alert(response.data);
@@ -140,17 +83,6 @@ export default {
           console.log(err);
           alert(err);
         });
-    },
-    getDate() {
-      var today = new Date();
-      this.date = this.zeroPadding(today.getFullYear(), 4) + '-' + this.zeroPadding(today.getMonth() + 1, 2) + '-' + this.zeroPadding(today.getDate(), 2)
-    },
-    zeroPadding(num, digit) {
-      var zero = "";
-      for (var i = 0; i < digit; i++) {
-        zero += "0";
-      }
-      return (zero + num).slice(-digit);
     },
     // loadComment() {
     //    this.$axios

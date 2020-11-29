@@ -15,7 +15,8 @@
         default-active="/welcomeIndex"
       >
         <el-menu-item index="/welcomeIndex">首页</el-menu-item>
-        <el-menu-item index="/login">登录</el-menu-item>
+        <el-menu-item index="/adminLogin">管理员登陆</el-menu-item>
+        <el-menu-item index="/customerLogin">顾客登录</el-menu-item>
         <el-menu-item index="/register">注册</el-menu-item>
       </el-menu>
     </el-header>
@@ -76,7 +77,7 @@ export default {
 }
 
 .el-main {
-  background-color: #b3c0d1;
+  background-color: #83a2fa;
   margin: 0;
   padding: 0;
 }

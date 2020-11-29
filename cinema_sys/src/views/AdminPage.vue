@@ -1,5 +1,5 @@
 <template>
-  <el-container class="index-container" direction="vertical">
+  <el-container class="index-container">
     <el-header>
       <div>
         <img src="../assets/img/logo.png" height="60" />
@@ -12,7 +12,7 @@
         active-text-color="rgb(43,43,43)"
       >
         <el-menu-item>
-          <el-input placeholder="请输入内容" v-model="keywords" clearable>
+          <el-input placeholder="请输入内容" v-model="input" clearable>
             <el-button
               slot="append"
               icon="el-icon-search"
@@ -21,9 +21,7 @@
             </el-button>
           </el-input>
         </el-menu-item>
-        <el-menu-item index="/personalIndex"
-          >你好，{{ username }}
-        </el-menu-item>
+        <el-menu-item index="/adminIndex">你好，{{ username }} </el-menu-item>
         <el-menu-item id="exit-div" divided @click.native="logOut"
           >退出</el-menu-item
         >
@@ -38,12 +36,13 @@
           text-color="rgb(220,220,220)"
           active-text-color="#409EFF"
         >
-          <el-menu-item index="/customerIndex">主页</el-menu-item>
-          <el-menu-item index="/movieMess">影片列表</el-menu-item>
-          <el-menu-item index="/favourites">收藏列表</el-menu-item>
+          <el-menu-item index="/adminIndex">主页</el-menu-item>
+          <el-menu-item index="/movieManage">影片管理</el-menu-item>
+          <el-menu-item index="1" disabled>xxxx</el-menu-item>
+          <el-menu-item index="1" disabled>xxxx</el-menu-item>
         </el-menu>
       </el-aside>
-      <el-main style="height:100%">
+      <el-main>
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -56,8 +55,7 @@ export default {
     return {
       showDot: false,
       username: window.sessionStorage.getItem("name"),
-      keywords: "",
-      movies: "",
+      input: "",
     };
   },
 
@@ -66,29 +64,31 @@ export default {
       setInterval(this.CurentTime, 1000);
     });
   },
+  
   methods: {
     //退出按钮
     logOut() {
       window.sessionStorage.clear();
       this.$router.push("/welcomeIndex");
     },
-    // searchMovies() {
-    //   this.$axios
-    //     .get(
-    //       "http://cinema.qingxu.website:8083/demo/queryMovie?id=" +
-    //       this.keywords
-    //     )
-    //     .then((response) => {
-    //       if (response && response.status === 200) {
-    //         window.sessionStorage.setItem("movies", response.data);
-    //         this.$router.push({ path: "/searchList" });
-    //       }
-    //     })
-    //     .catch((err)=> {
-    //       console.log(err);
-    //       alert(err);
-    //     });
-    // },
+    searchMovies() {
+      this.$axios
+        .get(
+          "http://cinema.qingxu.website:8083/demo/queryMovie?id=" + this.input
+        )
+        .then((response) => {
+          if (response && response.status === 200) {
+            window.sessionStorage.setItem("movieName", response.data.name);
+            window.sessionStorage.setItem("releaseTime", response.data.time);
+            window.sessionStorage.setItem("movieInfo", response.data.info);
+            this.$router.push({ path: "/searchMovie" });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          alert(err);
+        });
+    },
     handleCommand(command) {
       this.showDot = true;
     },
@@ -130,16 +130,16 @@ export default {
   color: rgb(239, 239, 239);
 }
 
+.el-aside {
+  background-color: rgb(60, 60, 60);
+}
+
 .el-menu-item {
   transition: none !important;
 }
 
 .el-main {
   background-color: #83a2fa;
-}
-
-.el-aside {
-  background-color: rgb(60, 60, 60);
 }
 
 .out-button {

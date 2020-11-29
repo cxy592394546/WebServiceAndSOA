@@ -2,25 +2,46 @@
   <el-row :gutter="20" class="el-row" type="flex">
     <el-col :span="6" v-for="(o, index) in info.length" :key="o" class="el-col">
       <el-card class="el-card" :key="index">
-        <img src="../../assets/img/logo.png" class="image" />
+        <img
+          src="../../assets/img/logo.png"
+          style="width: 100%; display: block;"
+        />
         <div style="padding: 14px;">
           <span>{{ info[o - 1].name }}</span>
           <div class="bottom clearfix">
             <time class="time">上映时间：{{ info[o - 1].time }}</time>
             <el-col>
-              <!-- <el-button type="text" class="buttonR" @click.native="movieDetail(o)">
-              查看详情
-            </el-button> -->
               <el-button
                 type="text"
-                class="buttonL"
-                @click.native="RemoveMovie(o)"
+                class="button"
+                @click.native="movieDetail(o)"
               >
-                取消收藏
+                查看详情
+              </el-button>
+              <el-button
+                type="text"
+                class="button"
+                @click.native="deleteMovie(o)"
+              >
+                删除影片
               </el-button>
             </el-col>
           </div>
         </div>
+      </el-card>
+    </el-col>
+    <el-col :span="6" class="el-col">
+      <el-card>
+        <img src="../../assets/img/Add.jpeg"
+          style="width: 100%; display: block;"
+        />
+        <el-button
+                type="text"
+                class="button"
+                @click.native="addMovie()"
+              >
+                添加影片
+              </el-button>
       </el-card>
     </el-col>
   </el-row>
@@ -41,33 +62,36 @@ export default {
   methods: {
     loadData() {
       this.$axios
-        .get("http://cinema.qingxu.website:20086/demo/allCMovies")
-        .then((response) => (this.info = response.data.CollectedMovies));
+        .get("http://cinema.qingxu.website:20086/demo/allMovies")
+        .then((response) => (this.info = response.data.Movies));
     },
     movieDetail(o) {
       window.sessionStorage.setItem("movieName", this.info[o - 1].name);
       window.sessionStorage.setItem("releaseTime", this.info[o - 1].time);
-      // window.sessionStorage.setItem("movieInfo", this.info[o - 1].info);
-      this.$router.push({ path: "/movieDetail" });
+      window.sessionStorage.setItem("movieInfo", this.info[o - 1].info);
+      window.sessionStorage.setItem("movieId", this.info[o - 1].id);
+      this.$router.push({ path: "/adminMovieDetail" });
     },
-    RemoveMovie(o) {
+    deleteMovie(o) {
       this.$axios
-        .post(
-          "http://cinema.qingxu.website:8083/demo/deleteCMovie?id=" +
-            this.info[o - 1].id
+        .post("http://cinema.qingxu.website:8083/demo/deleteMovie?id="+
+          this.info[o - 1].id
         )
-        // .post(
-        //   "http://cinema.qingxu.website:8084/demo/deleteCMovie",
-        //   {id:this.info[o-1].id}
-        // )
         .then((response) => {
-          console.log(response.data);
           alert(response.data);
         })
         .catch((err) => {
           console.log(err);
           alert(err);
         });
+    },
+    // deleteMovie(o) {
+    //   this.$axios.post("http://cinema.qingxu.website:20086/demo/deleteMovies", {
+    //     id: this.info[o - 1].id,
+    //   });
+    // },
+    addMovie() {
+      this.$router.push({ path: "/addMovie" });      
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
@@ -87,19 +111,9 @@ export default {
   line-height: 12px;
 }
 
-.buttonR {
+.button {
   padding: 0;
   float: right;
-}
-
-.buttonL {
-  padding: 0;
-  float: left;
-}
-
-.image {
-  width: 100%;
-  display: block;
 }
 
 .clearfix:before,
@@ -121,7 +135,7 @@ export default {
   margin-top: -5px;
 }
 .el-row {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
 }

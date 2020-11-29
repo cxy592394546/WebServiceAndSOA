@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+
 import axios from 'axios'
-import qs from 'qs'
+axios.defaults.withCredentials=false
+axios.defaults.crossDomain=true
 
 //导入ElementUI相关内容
 import ElementUI from 'element-ui';
@@ -12,8 +14,7 @@ Vue.use(ElementUI);
 // 导入全局样式表
 import "./assets/css/global.css"
 
-Vue.prototype.$ajax = axios
-Vue.prototype.$qs=qs
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
 new Vue({
