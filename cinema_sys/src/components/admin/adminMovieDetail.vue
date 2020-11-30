@@ -2,14 +2,15 @@
   <el-container>
     <el-main>
       <el-card shadow="never">
-        <img src="../../assets/img/logo.png" class="image" />
+        <img :src="movieLogo" style="width: 25%;display: block;" />
         <div slot="header" class="clearfix">
           <span>{{ movieName }}</span>
         </div>
         <div clas="text">
           <span>上映时间：{{ releaseTime }}</span>
         </div>
-        <div class="text item">{{ movieInfo }}</div>
+        <!-- <div class="text item">{{ movieInfo }}</div> -->
+        <div v-html="this.movieInfo">{{this.movieInfo}}</div>
         <el-button type="danger" @click="deleteMovie()">删除影片</el-button>
       </el-card>
     </el-main>
@@ -30,7 +31,6 @@
 </template>
 
 <script>
-// import wangEditor from "wangeditor";
 export default {
   data() {
     return {
@@ -38,31 +38,21 @@ export default {
       releaseTime: window.sessionStorage.getItem("releaseTime"),
       movieInfo: window.sessionStorage.getItem("movieInfo"),
       movieId: window.sessionStorage.getItem("movieId"),
+      movieLogo: window.sessionStorage.getItem("movieLogo"),
 
       websites: "",
       // comments: "",
       likeFlag: false,
       date: "",
-      // editor: null,
-      // editorData: "",
     };
   },
 
   props: ["catchData"],
 
   mounted() {
-    this.loadButton();
+    // this.loadButton();
     // this.loadComment();
     this.getDate();
-
-    // const editor = new wangEditor(`#demo`);
-    // // 配置 onchange 回调函数，将数据同步到 vue 中
-    // editor.config.onchange = (newHtml) => {
-    //   this.editorData = newHtml;
-    // };
-    // // 创建编辑器
-    // editor.create();
-    // this.editor = editor;
   },
 
   methods: {
@@ -91,21 +81,10 @@ export default {
     //     )
     //     .then((response) => (this.comments = response.data));
     // },
-    // getEditorData() {
-    //   // 通过代码获取编辑器内容
-    //   let data = this.editor.txt.html();
-    //   alert(data);
-    // },
     handleCommand(command) {
       this.showDot = true;
     },
   },
-
-  // beforeDestroy() {
-  //   // 调用销毁 API 对当前编辑器实例进行销毁
-  //   this.editor.destroy();
-  //   this.editor = null;
-  // },
 };
 </script>
 
@@ -119,7 +98,7 @@ export default {
 }
 
 .image {
-  width: 25%;
+  width: 100%;
   display: block;
 }
 

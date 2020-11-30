@@ -14,6 +14,13 @@ Vue.use(ElementUI);
 // 导入全局样式表
 import "./assets/css/global.css"
 
+// 富文本编辑器
+import quillEditor from 'vue-quill-editor'
+Vue.use(quillEditor)
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 

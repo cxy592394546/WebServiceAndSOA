@@ -2,7 +2,7 @@
   <el-row :gutter="20" class="el-row" type="flex">
     <el-col :span="6" v-for="(o, index) in info.length" :key="o" class="el-col">
       <el-card class="el-card" :key="index">
-        <img src="../../assets/img/logo.png" class="image" />
+        <img :src="info[o - 1].logo" class="image" />
         <div style="padding: 14px;">
           <span>{{ info[o - 1].name }}</span>
           <div class="bottom clearfix">
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       info: "",
-      movieName:"",
+      movieName: "",
     };
   },
   mounted() {
@@ -30,17 +30,16 @@ export default {
   },
   beforeDestroy() {},
   methods: {
-    loadData() {
-      this.$axios
-        .get(
-          "http://cinema.qingxu.website:20086/demo/allMovies"
-        )
-        .then((response) => (this.info = response.data.Movies));
+    async loadData() {
+      let response = await this.$axios
+        .get("http://film.qingxu.website:8083/demo/allMovies");
+      this.info = response.data.Movies;
     },
     movieDetail(o) {
       window.sessionStorage.setItem("movieName", this.info[o - 1].name);
       window.sessionStorage.setItem("releaseTime", this.info[o - 1].time);
       window.sessionStorage.setItem("movieInfo", this.info[o - 1].info);
+      window.sessionStorage.setItem("movieLogo", this.info[o - 1].logo);
       this.$router.push({ path: "/movieDetail" });
     },
     handleSelect(key, keyPath) {

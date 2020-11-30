@@ -2,7 +2,7 @@
   <el-container>
     <el-main>
       <el-card shadow="never">
-        <img src="../../assets/img/logo.png" class="image" />
+        <img :src="movieLogo" style="width: 25%;display: block;" />
         <div slot="header" class="clearfix">
           <span>{{ movieName }}</span>
         </div>
@@ -29,32 +29,22 @@
 </template>
 
 <script>
-// import wangEditor from "wangeditor";
 export default {
   data() {
     return {
       movieName: window.sessionStorage.getItem("movieName"),
       releaseTime: window.sessionStorage.getItem("releaseTime"),
       movieInfo: window.sessionStorage.getItem("movieInfo"),
+      movieLogo: window.sessionStorage.getItem("movieLogo"),
+
       // comments: "",
-      // editor: null,
-      // editorData: "",
     };
   },
 
   props: ["catchData"],
 
   mounted() {
-    // this.loadComment();
 
-    // const editor = new wangEditor(`#demo`);
-    // // 配置 onchange 回调函数，将数据同步到 vue 中
-    // editor.config.onchange = (newHtml) => {
-    //   this.editorData = newHtml;
-    // };
-    // // 创建编辑器
-    // editor.create();
-    // this.editor = editor;
   },
 
   methods: {
@@ -70,21 +60,10 @@ export default {
     //     )
     //     .then((response) => (this.comments = response.data));
     // },
-    // getEditorData() {
-    //   // 通过代码获取编辑器内容
-    //   let data = this.editor.txt.html();
-    //   alert(data);
-    // },
     handleCommand(command) {
       this.showDot = true;
     },
   },
-
-  // beforeDestroy() {
-  //   // 调用销毁 API 对当前编辑器实例进行销毁
-  //   this.editor.destroy();
-  //   this.editor = null;
-  // },
 };
 </script>
 
@@ -98,7 +77,7 @@ export default {
 }
 
 .image {
-  width: 25%;
+  width: 100%;
   display: block;
 }
 

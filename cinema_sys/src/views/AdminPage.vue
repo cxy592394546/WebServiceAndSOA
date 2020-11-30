@@ -74,14 +74,15 @@ export default {
     searchMovies() {
       this.$axios
         .get(
-          "http://cinema.qingxu.website:8083/demo/queryMovie?id=" + this.input
+          "http://film.qingxu.website:8083/demo/queryMovie?id=" + this.input
         )
         .then((response) => {
           if (response && response.status === 200) {
             window.sessionStorage.setItem("movieName", response.data.name);
             window.sessionStorage.setItem("releaseTime", response.data.time);
             window.sessionStorage.setItem("movieInfo", response.data.info);
-            this.$router.push({ path: "/searchMovie" });
+            window.sessionStorage.setItem("movieLogo", response.data.logo);
+            this.$router.push({ path: "/adminMovieDetail" });
           }
         })
         .catch((err) => {

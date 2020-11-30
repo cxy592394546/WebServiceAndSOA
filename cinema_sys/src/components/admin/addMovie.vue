@@ -1,18 +1,19 @@
 <template>
   <el-card>
     <p><b>添加影片</b></p>
-    <el-input
+    <!-- <el-input
       placeholder="请输入影片介绍"
       :autosize="{ minRows: 2, maxRows: 4 }"
       v-model="mInfo"
       clearable
-    ></el-input>
-    <div style="margin: 20px 0;"></div>
+    ></el-input> -->
+    <quill-editor ref="myTextEditor" v-model="mInfo" :option="editorOption" style="height:300px;"></quill-editor>
+    <div style="margin: 100px 0;"></div>
     <el-input placeholder="请输入影片名称" v-model="mName" clearable></el-input>
     <div style="margin: 20px 0;"></div>
     <el-input placeholder="请输入上映时间" v-model="mTime" clearable></el-input>
     <div style="margin: 20px 0;"></div>
-    <el-button type="success" @click="deleteMovie()">确认提交</el-button>
+    <el-button type="success" @click="addMovie()">确认提交</el-button>
   </el-card>
 </template>
 
@@ -23,6 +24,7 @@ export default {
       mInfo: "",
       mName: "",
       mTime: "",
+      quillData: "",
     };
   },
 

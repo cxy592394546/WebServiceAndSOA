@@ -1,50 +1,46 @@
 <template>
-  <el-row :gutter="20" class="el-row" type="flex">
-    <el-col :span="6" v-for="(o, index) in info.length" :key="o" class="el-col">
-      <el-card class="el-card" :key="index">
-        <img
-          src="../../assets/img/logo.png"
-          style="width: 100%; display: block;"
-        />
-        <div style="padding: 14px;">
-          <span>{{ info[o - 1].name }}</span>
-          <div class="bottom clearfix">
-            <time class="time">上映时间：{{ info[o - 1].time }}</time>
-            <el-col>
-              <el-button
-                type="text"
-                class="button"
-                @click.native="movieDetail(o)"
-              >
-                查看详情
-              </el-button>
-              <el-button
-                type="text"
-                class="button"
-                @click.native="deleteMovie(o)"
-              >
-                删除影片
-              </el-button>
-            </el-col>
+  <el-card>
+    <div slot="header" class="clearfix">
+      <h3>影片列表</h3>
+      <el-button type="success" style="float:right" @click.native="addMovie()">
+        添加影片
+      </el-button>
+    </div>
+    <el-row :gutter="20" class="el-row" type="flex">
+      <el-col
+        :span="6"
+        v-for="(o, index) in info.length"
+        :key="o"
+        class="el-col"
+      >
+        <el-card class="el-card" :key="index">
+          <img :src="info[o - 1].logo" class="image" />
+          <div style="padding: 14px;">
+            <span>{{ info[o - 1].name }}</span>
+            <div class="bottom clearfix">
+              <time class="time">上映时间：{{ info[o - 1].time }}</time>
+              <el-col>
+                <el-button
+                  type="text"
+                  class="button"
+                  @click.native="movieDetail(o)"
+                >
+                  查看详情
+                </el-button>
+                <el-button
+                  type="text"
+                  class="button"
+                  @click.native="deleteMovie(o)"
+                >
+                  删除影片
+                </el-button>
+              </el-col>
+            </div>
           </div>
-        </div>
-      </el-card>
-    </el-col>
-    <el-col :span="6" class="el-col">
-      <el-card>
-        <img src="../../assets/img/Add.jpeg"
-          style="width: 100%; display: block;"
-        />
-        <el-button
-                type="text"
-                class="button"
-                @click.native="addMovie()"
-              >
-                添加影片
-              </el-button>
-      </el-card>
-    </el-col>
-  </el-row>
+        </el-card>
+      </el-col>
+    </el-row>
+  </el-card>
 </template>
 
 <script>
@@ -60,22 +56,25 @@ export default {
   },
   beforeDestroy() {},
   methods: {
-    loadData() {
-      this.$axios
-        .get("http://cinema.qingxu.website:20086/demo/allMovies")
-        .then((response) => (this.info = response.data.Movies));
+    async loadData() {
+      let response = await this.$axios.get(
+        "http://cinema.qingxu.website:20086/demo/allMovies"
+      );
+      this.info = response.data.Movies;
     },
     movieDetail(o) {
       window.sessionStorage.setItem("movieName", this.info[o - 1].name);
       window.sessionStorage.setItem("releaseTime", this.info[o - 1].time);
       window.sessionStorage.setItem("movieInfo", this.info[o - 1].info);
+      window.sessionStorage.setItem("movieLogo", this.info[o - 1].logo);
       window.sessionStorage.setItem("movieId", this.info[o - 1].id);
       this.$router.push({ path: "/adminMovieDetail" });
     },
     deleteMovie(o) {
       this.$axios
-        .post("http://cinema.qingxu.website:8083/demo/deleteMovie?id="+
-          this.info[o - 1].id
+        .post(
+          "http://cinema.qingxu.website:8083/demo/deleteMovie?id=" +
+            this.info[o - 1].id
         )
         .then((response) => {
           alert(response.data);
@@ -91,7 +90,7 @@ export default {
     //   });
     // },
     addMovie() {
-      this.$router.push({ path: "/addMovie" });      
+      this.$router.push({ path: "/addMovie" });
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);

@@ -40,7 +40,7 @@ export default {
 }
 
 .image {
-  width: 25%;
+  width: 100%;
   display: block;
 }
 
